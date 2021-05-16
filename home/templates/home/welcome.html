@@ -1,0 +1,21 @@
+{% extends 'home/index.html' %}
+
+{% load static %}
+
+{% block header %}
+{% load plotly_dash %}
+{% plotly_header %}
+{% endblock header %}
+
+{% block content %}
+<h1>Home Page</h1>
+
+    <div class="{% plotly_class name='Example' %} card" style="height: 80%; width: 50%">
+    {% plotly_direct name='Example'%}
+    </div>
+{% endblock content %}
+
+
+{% block footer %}
+{% plotly_footer %}
+{% endblock footer %}

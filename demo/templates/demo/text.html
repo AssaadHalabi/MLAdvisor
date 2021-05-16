@@ -1,0 +1,48 @@
+{% extends 'demo/index.html' %}
+{% load static %}
+
+{% block header %}
+{% load plotly_dash %}
+{% plotly_header %}
+{% endblock header %}
+
+{% block name %}Text demo{% endblock name %}
+
+{% block content %}
+
+    <div class="{% plotly_class name='TextDemo' %} card">
+    {% plotly_direct name='TextDemo' %}
+    </div>
+
+
+<script>
+        // Selecting the iframe element
+        window.addEventListener("load", function(){
+      var frame = document.getElementById("hover-data");
+          console.log(frame)
+        // Adjusting the iframe height onload event
+        frame.onload = function()
+        // function execute while load the iframe
+        {
+          // set the height of the iframe as 
+          // the height of the iframe content
+          frame.style.height = 
+          frame.contentWindow.document.body.scrollHeight + 'px';
+           
+  
+         // set the width of the iframe as the 
+         // width of the iframe content
+         frame.style.width  = 
+          frame.contentWindow.document.body.scrollWidth+'px';
+          console.log("I EXECUTED");
+              
+        }
+  });
+        
+        </script>
+{% endblock content %}
+
+
+{% block footer %}
+{% plotly_footer %}
+{% endblock footer %}
